@@ -5,13 +5,15 @@ By adding babel-polyfill to the standard create-react-app app, a bug is caused i
 in the console:
 
 expected output:
-let str = 'fooBar'
-str.split(/(?=[A-Z])/)
 
-> ["foo", "Bar"]
+    let str = 'fooBar'
+    str.split(/(?=[A-Z])/)
+
+    > ["foo", "Bar"]
 
 actual output:
-let str = 'fooBar'
-str.split(/(?=[A-Z])/)
 
-> ["fooBar"]
+    let str = 'fooBar'
+    str.split(/(?=[A-Z])/)
+
+    > ["fooBar"]
