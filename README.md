@@ -1,6 +1,10 @@
-## Demo of bug in uglify or babel-polyfill or chrome
+## Demo of bug in uglify or webpack uglify plugin or babel-polyfill or chrome
 
-By adding babel-polyfill to the standard create-react-app app, a bug is caused in chrome 51 (no other versions seem to be affected). It onkly happens in production mode (yarn build, not yarn start). If the uglify js plugin is commented out, the bug does not happen.
+I started with create-react-app's canary build (because it needs webpack 2 to reproduce the issue). 
+
+    create-react-app my-app --scripts-version react-scripts@canary
+
+By importing babel-polyfill in the entry point, a bug is caused in chrome 51 (no other versions seem to be affected). It only happens in production mode (yarn build, not yarn start). If the uglify js plugin is commented out, the bug does not happen.
 
 in the console:
 
