@@ -1,6 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import 'babel-polyfill';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let foo = 123;
+console.log(foo);
