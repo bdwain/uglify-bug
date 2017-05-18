@@ -3,15 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "babel-polyfill": "^6.23.0"
+    "serve": "^5.1.5",
+    "uglify-js": "^3.0.7"
   },
-  "devDependencies": {
-    "react-scripts": "canary"
-  },
+  "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "prestart": "rm -rf build/ && mkdir build && cp src/index.html build/",
+    "start": "uglifyjs src/index.js -c reduce_vars -o build/index.js",
+    "poststart": "serve build -p 5002"
   }
 }

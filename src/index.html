@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <div>uglify bug demo. open console and say: <div />
+    <div>let str = 'fooBar';</div>
+    <div>str.split(/(?=[A-Z])/);</div>
+    <div>expected result: ['foo', 'Bar']</div>
+    <div>failure: ['fooBar']</div>
+    <script src="/index.js"></script>
+    <script>
+      console.log('let str = "fooBar"');
+      let str = 'fooBar';
+      console.log('str.split(/(?=[A-Z])/): ', str.split(/(?=[A-Z])/));
+    </script>
+  </body>
+</html>

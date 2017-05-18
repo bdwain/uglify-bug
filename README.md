@@ -1,12 +1,6 @@
-## Demo of bug in uglify or webpack uglify plugin or babel-polyfill or chrome
+## Demo of bug in uglify reduce_vars option
 
-I started with create-react-app's canary build (because it needs webpack 2 to reproduce the issue). 
-
-    create-react-app my-app --scripts-version react-scripts@canary
-
-I removed react and react-dom from the library because the bug was still there without them.
-
-By importing babel-polyfill in the entry point, a bug is caused in chrome 51 (no other versions seem to be affected). It only happens in production mode (yarn build, not yarn start). If the uglify js plugin is commented out, the bug does not happen.
+Index.js contains the source of babel-polyfill. The build minfies it with the reduce_vars option enabled. This causes a bug in chrome 51 (no other versions seem to be affected). 
 
 in the console:
 
